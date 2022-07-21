@@ -1,0 +1,104 @@
+state::lake::You are standing by a fuming lake, with a dirt road to the east, a forest to the north, a shack to the west and a garden to the south.
+state::road::You are on a dirt road with a fork. There is an abandoned gas station to the right and some dunes to the left
+state::dunes::You are in some dunes
+command::forest::lake::forest::""
+command::gas station::road::gas station::""
+command::right::dunes::road::""
+command::left::gas station::road::""
+state::gas station::You are in an abandoned gas station, with a red tank of gas just sitting there. There is an empty store ahead.
+item::tank of gas::A tank of gas::gas station
+command::east::lake::road::""
+command::west::road::lake::""
+command::left::road::dunes::""
+command::right::road::gas station::""
+state::store::you are in a mostly empty store. you only see some bread and chips
+item::bread::a loaf of bread::store
+item::chips::a bag of chips::store
+command::ahead::gas station::store::""
+command::forward::gas station::store::""
+command::backwards::store::gas station::""
+command::back::store::gas station::""
+command::gas station::road::gas station::""
+item::seeds::some seeds::garden
+state::garden::A beautiful garden
+command::south::lake::garden::""
+command::garden::lake::garden::""
+command::lake::garden::lake::seeds
+command::back::garden::lake::seeds
+command::north::garden::lake::seeds
+command::north::lake::forest::""
+state::forest::You are in a forest with nothing but trees in every direction. There is a little bit of a clearing to the left, and of course, the lake to the south....
+state::clearing::You are in a clearing, with the rest of the forest to the right and nothing else around
+command::left::forest::clearing::""
+item::wood::Pile of wood::clearing
+command::right::clearing::forest::""
+command::south::forest::lake::""
+command::store::gas station::store::""
+command::road::lake::road::""
+command::west::lake::outside of shack::seeds
+command::east::outside of shack::lake::""
+command::back::outside of shack::lake::""
+command::shack::lake::outside of shack::seeds
+state::outside of shack::You are standing outside of small wooden shack::seeds
+state::inside of shack::You are inside a small shack.There is a spaceship.
+command::inside::outside of shack::inside of shack::""
+command::outside::inside of shack::outside of shack::""
+state::spaceship::You are in the driver's seat of the spaceship.
+command::spaceship::inside of shack::spaceship::tank of gas
+command::back::spaceship::inside of shack::""
+command::inside of shack::spaceship::inside of shack::""
+state::space::You are traveling through space. To the north is the moon.
+command::blast off::spaceship::space::tank of gas
+command::moon::space::moon::""
+command::north::space::moon::""
+
+state::moon::You're on the moon near the American flag. The landscape is bright, yet dull and gray. There is a path to the east.
+item::american flag::the flag put on the moon by Apollo 11::moon
+command::east::moon::outside space station::""
+command::west::outside space station::moon::""
+command::back::outside space station::moon::""
+state::outside space station::You're standing in front of the space station. 
+state::inside space station::You're inside the space station. There are two rooms - one to the right and one right in front of you.
+command::inside::outside space station::inside space station::""
+command::outside::inside space station::outside space station::""
+command::back::inside space station::outside space station::""
+command::right::inside space station::fuel room::""
+command::left::fuel room::inside space station::""
+command::back::fuel room::inside space station::""
+command::straight::inside space station::spaceship room::""
+command::back::spaceship room::inside space station::""
+state::fuel room::There are shelves of fuel tanks and supplies
+state::spaceship room::There is another space craft in the middle of this room!
+item::fuel tank::A tank of fuel big enough to power a large space craft.::fuel room
+state::space craft::You are in the driver's seat of the space craft.
+command::space craft::spaceship room::space craft::""
+command::back::space craft::spaceship room::""
+command::exit::space craft::spaceship room::""
+state::space(again!)::You are traveling through space(again!). To the south is Earth and to the north is Mars.
+command::blast off::space craft::space(again!)::fuel tank
+command::earth::space(again!)::space craft::""
+command::north::space(again!)::mars::""
+command::mars::space(again!)::mars::""
+command::south::mars::space(again!)::""
+state::mars::You are on Mars, the red planet. There are red rocks far to the north and two paths leading to the east and west, respectively. 
+item::go cart::A go cart for easier traveling::mars
+state::glaciers::There are two enormous, beautiful glaciers. They look easy to get ice off of.
+command::east::mars::glaciers::go cart
+command::west::glaciers::mars::go cart
+command::back::glaciers::mars::go cart
+command::red rocks::mars::red rocks::go cart
+command::mars::red rocks::mars::go cart
+command::back::red rocks::mars::go cart
+item::ice::Ice that is good for melting::glaciers
+command::north::mars::red rocks::go cart
+command::south::red rocks::mars::go cart
+state::red rocks::There are some nondescript red rocks here.
+command::west::mars::patch of smooth dirt::go cart
+command::east::patch of smooth dirt::mars::go cart
+command::back::patch of smooth dirt::mars::go cart
+state::patch of smooth dirt::There is a patch of smooth dirt that looks suitable for growing crops!
+command::plant::patch of smooth dirt::dirt::seeds
+state::dirt::You're near the dirt
+command::water::patch of smooth dirt::forest on mars::ice
+state::forest on mars::You did it!
+
